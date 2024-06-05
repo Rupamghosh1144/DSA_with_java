@@ -1,0 +1,279 @@
+import java.util.Scanner;
+
+// public class xyz {
+//     int age=20;
+//     String name="Rupam";
+//     public static void main(String[] args) {
+//         // Scanner sc = new Scanner(System.in);
+//         // System.out.println("Enter the value of a: ");
+//         // int a = sc.nextInt();
+//         // int b = 10;
+//         // int c = a + b;
+
+//         // System.out.println(c);
+//         // System.out.println("Hello world");
+//         // sc.close();
+
+
+//         xyz abj=new xyz();
+//         System.out.println("name is: "+abj.name+" and age is: "+abj.age);
+//     }
+// }
+
+
+
+
+//function or method call
+/**
+ * xyz
+ */
+// public class xyz {
+// static void details(){
+//     System.out.println("name is: rupam");
+// }
+// static void sum(int a, int b){
+//     int c=a+b;
+//     System.out.println("sum if a and b is: "+c  );
+// }
+// public static void main(String[] args) {
+//     details();
+//     sum(2,5);
+// }
+    
+// }
+
+
+
+
+
+//array
+/**
+ * xyz
+ */
+// import java.util.Arrays;
+// public class xyz {
+
+//     public static void main(String[] args) {
+//         int age[]=new int[5];
+//         age[0]=10;
+//         age[1]=1;age[2]=30;age[3]=5;age[4]=21;
+       
+//         for(int i=0;i<5;i++){
+//             System.out.print(age[i]+" ");
+//         }
+//         Arrays.sort(age);
+//         System.out.println("after the sorting");
+//         for(int i=0;i<5;i++){
+//             System.out.print(age[i]+" ");
+//         }
+
+//     }
+// }
+
+
+
+
+
+//pair sum
+/**
+ * xyz
+ */
+// public class xyz {
+
+//     public static void main(String[] args) {
+//         int arr[]={4,6,3,5,8,2};
+//         Scanner sc=new Scanner(System.in);
+//         System.out.println("enter a number that you want to sum of pair: ");
+//         int target=sc.nextInt();
+//         int n=arr.length;
+//         int count=0;
+//         for(int i=0;i<n;i++){
+//             for(int j=i+1;j<n;j++){
+//                 if(arr[i]+arr[j]==target){
+//                     count++;
+//                 }
+//             }
+//         }
+//         if(count==0){
+//             System.out.println("there are no such a pair in the array that have a pair of sum");
+//         }else{
+//             System.out.println("the number of pair of sum is: "+count);
+//         }
+//         sc.close();
+//     }
+// }
+
+
+
+//find the max value in the array
+/**
+ * xyz
+ */
+import java.util.Arrays;
+
+//1st way
+// public class xyz {
+
+//     public static void main(String[] args) {
+//         int arr[]={12,14,56,32,53,22,10,48};
+//         int n=arr.length;
+//         Arrays.sort(arr);
+//         System.out.println("the maximum value in the array is: "+arr[n-1]);
+//         System.out.println("the minimum value in the array is: "+arr[0]);
+//     }
+// }
+
+
+//2nd way
+/**
+ * xyz
+ */
+// public class xyz {
+//     static int findmax(int[] arr){
+//         int mx=Integer.MIN_VALUE;
+//         for(int i=0;i<arr.length;i++){
+//             if(arr[i]>mx){
+//                 mx=arr[i];
+//             }
+           
+//         }
+//         return mx;
+//     }
+//     public static void main(String[] args) {
+//         int arr[]={12,13,15,16,10,17};
+//         int x=findmax(arr);
+//         System.out.println("the max number is: "+x);
+//     }
+// }
+
+
+
+
+/**
+ * xyz
+ */
+// import java.util.Scanner;
+// public class xyz {
+
+//     public static void main(String[] args) {
+//         int arr[]={12,34,15,13,10,85,83,75,53,34};
+//        int n=arr.length;
+//        int target=0;
+//        for(int i=0;i<n;i++){
+//         for(int j=i+1;j<n;j++){
+//             if(arr[i]==arr[j]){
+//                 System.out.println("the common element is the array is: "+arr[i]);
+//                 target=arr[i];
+//             }
+//         }
+//        }
+//        for(int i=0;i<n;i++){
+//         if(arr[i]==target){
+//             System.out.println(i);
+//         }
+//        }
+
+
+//     }
+// }
+
+
+
+
+/**
+ * xyz
+ */
+// import java.util.Scanner;
+// public class xyz {
+
+//     public static void main(String[] args) {
+//         Scanner sc=new Scanner(System.in);
+//         System.out.println("ENter the size of the array: ");
+//         int size=sc.nextInt();
+//         int array1[]=new int[size];
+//         int array2[]=new int[size];
+//         System.out.println("Enter the value in the array1: ");
+//         for(int i=0;i<size;i++){
+//             array1[i]=sc.nextInt();
+//         }
+//         System.out.println("Enter the value in the array2: ");
+//         for(int i=0;i<size;i++){
+//             array2[i]=sc.nextInt();
+//         }
+
+        
+//         int ans[]=new int[size];
+//         for(int i=0;i<size;i++){
+//             ans[i]=array1[i]+array2[i];
+//         }
+//         System.out.println("the sum of the arra1 and arra2 is: ");
+//         for(int i=0;i<size;i++){
+//             System.out.print(ans[i]+" ");
+//         }
+        
+
+//         sc.close();
+//     }
+// }
+
+
+
+//swap of number
+/**
+ * xyz
+ */
+// public class xyz {
+//     static void swap(int a,int b){
+//         int c=a;
+//         a=b;
+//         b=c;
+//         System.out.println("after swap the value of a and b is: "+a+" "+b);
+
+
+//     }
+//     public static void main(String[] args) {
+//         int a=5;int b=10;
+//         System.out.println("Before swap the value of a and b is: "+a+" "+b);
+//         swap(a, b);
+//     }
+// }
+
+
+
+
+//reverse of a number in array
+/**
+ * xyz
+ */
+import java.util.Scanner;
+public class xyz {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("ENter the size of the array: ");
+        int size=sc.nextInt();
+        int array1[]=new int[size];
+        System.out.println("Enter the value in the array: ");
+        for(int i=0;i<size;i++){
+            array1[i]=sc.nextInt();
+        }
+        System.out.println("the original value of the array: ");
+        for(int i=0;i<size;i++){
+            System.out.print(array1[i]+" ");
+        }
+        System.out.println();
+        System.out.println("after reverse of the array: ");
+        int ans[]=new int[size];
+        int j=0;
+        for(int i=size-1;i>=0;i--){
+            ans[j++]=array1[i];
+        }
+        for(int i=0;i<size;i++){
+            System.out.print(ans[i]+" ");
+        }
+
+
+
+        sc.close();
+    }
+    
+}
