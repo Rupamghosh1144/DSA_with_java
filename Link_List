@@ -1,0 +1,144 @@
+//create node
+
+// public class linked_list {
+//     public static class Node{
+//         int data;
+//         Node next;
+//         Node(int a){
+//             data=a;
+//         }
+//     }
+//     public static void main(String[] args) {
+//         Node x=new Node(5);
+//         System.out.println(x.data);
+//         System.out.println(x.next);
+//     }
+// }
+
+
+
+/**
+ * linked_list
+ */
+// public class linked_list {
+// public static class Node{
+//     int data;
+//     Node next;
+//     Node(int data){
+//         this.data=data;
+//     }
+// }
+//     public static void main(String[] args) {
+//         Node x=new Node(5);
+//         Node y=new Node(6);
+//         Node z=new Node(7);
+//         Node w=new Node(2);
+
+
+//         System.out.println(x.next);
+//         x.next=y;
+//         System.out.println(x.next);
+//         System.out.println(y);
+//         System.out.println(z);
+//         System.out.println(w);
+
+
+//         System.out.println();
+//         y.next=z;
+//         z.next=w;
+
+//         //same address
+//         System.out.println(y.next);
+//         System.out.println(z);
+
+//         System.out.println();
+
+//         //same address
+//         System.out.println(z.next);
+//         System.out.println(w);
+
+
+
+//         //two way to print the next node data
+//         System.out.println(y.data);  //direct methode
+//         System.out.println(x.next.data);  //indirext methode
+
+//         System.out.println(z.data);
+//         System.out.println(x.next.next.next.data);
+
+
+
+//         //using loop print the data
+//         Node temp=x;
+//         System.out.println(temp.data);
+
+
+//         System.out.println();
+//         System.out.println();
+
+
+//         //using loop print the data
+//         for(int i=0;i<5;i++){
+//             System.out.print(temp.data+" ");
+//             temp=temp.next;
+//         }
+
+//         System.out.println();
+
+//         //using while loop printing the data in the ll
+//         Node tempo=x;
+//         while (tempo!=null) {
+//             System.out.print(tempo.data+" ");
+//             tempo = tempo.next;
+//         }
+//     }
+// }
+
+
+/**
+ * linked_list
+ */
+
+ //using function print the data in the ll
+public class linked_list {
+    public static void display_recusive(Node head){
+        if(head==null) return;
+        System.out.println(head.data+" ");;
+        display(head.next);
+    }
+    public static void display(Node a){
+        Node temp=a;
+        for(int i=0;i<3;i++){
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+
+    }
+    public static void display_with_a(Node a){
+        while(a!=null){
+            System.out.print (a.data+" ");
+            a=a.next;
+        }
+
+    }
+    public static class Node{
+        int data;
+        Node next;
+        Node(int a){
+            data=a;
+        }
+    }
+    public static void main(String[] args) {
+        Node a=new Node(5);
+        Node b=new Node(7);
+        Node c=new Node(3);
+
+        a.next=b;
+        b.next=c;
+
+        display(a);
+        display_with_a(a);
+        System.out.println();
+        display_recusive(a);
+    }
+}
