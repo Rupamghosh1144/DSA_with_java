@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+// public class binary {
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         System.out.println("enter the size of the array: ");
+//         int n = sc.nextInt();
+//         int arr[] = new int[n];
+//         System.out.println("enter the elements in the array: ");
+//         for (int i = 0; i < n; i++) {
+//             arr[i] = sc.nextInt();
+//         }
+//         System.out.println("enter the item that you want to search: ");
+//         int src = sc.nextInt();
+//         int result = -1;
+//         for (int i = 0; i < n; i++) {
+//             if (arr[i] == src) {
+//                 result = i;
+//                 break;
+//             }
+//         }
+//         if (result == -1) {
+//             System.out.println("item not found");
+//         } else {
+//             System.out.println("item is found at " + (result+1) + " index");
+//         }
+//         sc.close();
+//     }
+// }
+
+
+
+
+
+/**
+ * binary
+ */
+public class binary {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+                System.out.println("enter the size of the array: ");
+                int n = sc.nextInt();
+                int arr[] = new int[n];
+                System.out.println("enter the elements in the array: ");
+                for (int i = 0; i < n; i++) {
+                    arr[i] = sc.nextInt();
+                }
+                System.out.println("enter the item that you want to search: ");
+                int src = sc.nextInt();
+                int low=0;
+                int high=n-1;
+                int mid=(low+high)/2;
+                for(int i=0;i<n;i++){
+                    if(mid== src){
+                        return mid;
+                    }
+                    else if(mid>arr[mid]){
+                        low=mid+1;
+                    }else if(mid<arr[mid]){
+                        high=mid-1;
+                    }
+                }
+    }
+}
