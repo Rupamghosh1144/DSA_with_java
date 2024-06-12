@@ -1,0 +1,56 @@
+public class reversell {
+    public static void reverse(Node head){
+
+    }
+    public static class Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data=data;
+        }
+    }
+    public static void display(Node h){
+        Node temp=h;
+        for(int i=0;i<3;i++){
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+    }
+    public static void display_reverse(Node h){
+        if(h==null)
+        return;
+        display_reverse(h.next);   //for the recisive of the function it did not go to the next line and save the value in the stack then print the Value thats whay print the value in the reverse order
+        System.out.print(h.data+" ");
+
+    }
+
+    //display the length of the LL
+    public static int length(Node head){
+        int count=0;
+        while(head!=null){
+            count++;
+            head=head.next;
+        }
+        return count;
+    }
+    public static void main(String[] args) {
+        Node a=new Node(5);
+        Node b=new Node(2);
+        Node c=new Node(9);
+
+        a.next=b;
+        b.next=c;
+        // System.out.println(a.data);
+        // System.out.println(a.next);
+        // System.out.println(b);
+
+
+        display(a);
+        System.out.println();
+        display_reverse(a);
+        System.out.println();
+
+        System.out.println(length(a));
+
+    }
+}
