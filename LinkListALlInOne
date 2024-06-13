@@ -1,0 +1,91 @@
+public class Main{
+    public static class Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data=data;
+        }
+    }
+    public static class LinkList{
+        Node head=null;
+        Node tail=null;
+        int size=0;
+        void insert_at_last(int data){
+            Node temp=new Node(data);
+            if(head==null){
+                head=tail=temp;
+            }else{
+               tail.next=temp;
+               tail=temp;
+            }
+            size++;
+        }
+        void display(){
+            Node temp=head;
+            while(temp!=null){
+                System.out.print(temp.data+" ");
+                temp=temp.next;
+            }
+            System.out.println();
+        }
+        void insert_at_start(int data){
+            Node temp=new Node(data);
+            if(head==null){
+                tail=head=temp;
+                size++;
+                return;
+            }
+            else{
+                temp.next=head;
+                head=temp;
+                
+            }
+            size++;
+        }
+        void insert_at_any(int data,int idx){
+            Node temp=new Node(data);
+            Node t=head;
+            for(int i=0;i<idx-1;i++){
+                t=t.next;
+            }
+            temp.next=t.next;
+            t.next=temp;
+            size++;
+            
+        }
+        void delete(int idx){
+            Node temp=head;
+            for(int i=0;i<idx-1;i++){
+                temp=temp.next;
+            }
+            temp.next=temp.next.next;
+            size--;
+        }
+        int get_data(int idx){
+            Node temp=head;
+            for(int i=0;i<idx;i++){
+                temp=temp.next;
+            }
+            return temp.data;
+            
+        }
+    }
+    public static void main(String[] args){
+        LinkList ll=new LinkList();
+        ll.insert_at_last(2);
+        ll.insert_at_last(5);
+        ll.display();
+        System.out.println("size: "+ll.size);
+        ll.insert_at_last(6);
+        ll.display();
+        System.out.println("size: "+ll.size);
+        ll.insert_at_any(9,1);
+        ll.display();
+        System.out.println("size: "+ll.size);
+        ll.delete(2);
+        ll.display();
+        System.out.println("size: "+ll.size);
+        System.out.println(ll.get_data(1));
+        
+    }
+}
