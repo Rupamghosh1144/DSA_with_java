@@ -1,0 +1,153 @@
+public  class Main{
+    public static class Node{
+        int val;
+        Node next;
+        Node prev;
+        Node(int val){
+            this.val=val;
+        }
+    }
+    
+    //display the value using head value
+    public static void display(Node head){
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.val+" ");
+            temp=temp.next;
+        }
+        System.out.println();
+    }
+
+    public static void reverse(Node tail){
+        Node temp=tail;
+        while(temp!=null){
+            System.out.print(temp.val+" ");
+            temp=temp.prev;
+        }
+        System.out.println();
+    }
+    //display the value using tail value
+    public static void display_random(Node random){
+        Node temp=random;
+        while(temp.prev!=null){   //in the any random position we move to the backward direction to find the head 
+            temp=temp.prev;
+        }
+        //now head is find and print the valur in the right direction
+        while(temp!=null){
+            System.out.print(temp.val+" ");
+            temp=temp.next;
+        }
+        System.out.println();
+    }
+    
+    public static Node insert_at_start(Node head,int data){
+         Node t=new Node(data);
+        t.next=head;
+        head.prev=t;
+        head=t;
+        return head;
+    }
+    public static Node insert_at_start2(Node head,int data){//this is another methode
+        Node t=new Node(data);
+        t.next=head;
+        head=t;
+        t.prev=null;
+        return head;
+    }
+    public static Node insert_at_end(Node tail,int data){//if tail value is given
+        Node t=new Node(data);
+        tail.next=t;
+        tail=t;
+        t.next=null;
+        return tail;
+    }
+    public static void insert_at_end2(Node head,int data){//this is another methode,if head value is given
+        Node t=new Node(data);
+        Node temp=head;
+        while(temp.next!=null){
+            temp=temp.next;
+        }
+        temp.next=t;
+        t.prev=temp;
+    }
+    public static void insert_any(Node head,int idx,int data){
+        Node temp=head;
+        for(int i=0;i<idx-1;i++){
+            temp=temp.next;
+        }
+        Node t=new Node(data);
+        temp.next.prev=t;
+        t.prev=temp;
+        t.next=temp.next;
+        temp.next=t;
+    }
+    public static void delete_at_head(Node head){
+        head=head.next;
+        head.prev=null;
+    }
+    public static void delete_at_tail(Node head){
+        Node temp=head;
+        while(temp.next!=null){
+            temp=temp.next;
+        }
+        temp=temp.prev;
+        temp.next=null;
+    }
+    public static void delete_at_any(Node head,int idx){
+        Node temp=head;
+        for(int i=0;i<idx-1;i++){
+            temp=temp.next;
+        }
+        temp.next=temp.next.next;
+        temp.next.prev=temp;
+    }
+    public static void main(String[] args){
+       Node a=new Node(2);
+       Node b=new Node(9);
+       Node c=new Node(3);
+       Node d=new Node(4);
+       a.next=null;
+       a.next=b;
+       b.prev=a;
+       
+       b.next=c;
+       c.prev=b;
+       
+       c.next=d;
+       d.prev=c;
+       
+       d.next=null;
+       
+       display(a);
+       reverse(d);
+       display_random(d);
+       
+       Node newhead=insert_at_start(a,35);
+       display(newhead);
+       
+       Node newhead2=insert_at_start2(a,35);
+       display(newhead2);
+       
+       Node newtail=insert_at_end(d,23);
+       display(newhead);
+       
+       
+       insert_at_end2(d,57);
+       display(newhead);
+       
+       insert_any(newhead,3,78);
+       display_random(d);
+       
+       
+       delete_at_head(newhead);
+       display_random(d);
+       
+       
+       delete_at_tail(a);
+       display_random(d);
+       
+       delete_at_any(a,2);
+       display_random(d);
+       
+    }
+}
