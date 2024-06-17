@@ -1,0 +1,245 @@
+import java.util.Stack;
+// public class stack{
+//     public static void main(String[] args){
+//         Stack<Integer> st=new Stack<>();
+//         st.push(12);
+//         st.push(34);
+//         st.push(1);
+//         st.push(54);
+//         System.out.println(st.peek());
+//         System.out.println(st);
+//         st.pop();
+//         st.pop();
+//         System.out.println("size is: "+st.size());
+//         System.out.println(st);
+//     }
+// }
+
+
+//input and outpurof the stack
+import java.util.Scanner;
+// public class stack{
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         Stack<Integer> st=new Stack<>();
+//         System.out.print("enter the size of the stack: ");
+//         int n=sc.nextInt();
+        
+//         System.out.print("enter the elements in the stack: ");
+//         for(int i=0;i<n;i++){
+//             int x=sc.nextInt();
+//             st.push(x);
+//         }
+//         System.out.print(st);
+//     } 
+// }
+
+
+
+
+//copythe same elements (move satck same order)--->using 3 stack
+// public class stack{
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         Stack<Integer> st=new Stack<>();
+//         Stack<Integer> rt=new Stack<>();
+//         Stack<Integer> gt=new Stack<>();
+//         st.push(12);
+//         st.push(34);
+//         st.push(1);
+//         st.push(54);
+//         System.out.println(st);
+//         while(st.size()>0){
+//             int x=st.peek();
+//             rt.push(x);
+//             st.pop();
+//         }
+        
+//         while(rt.size()>0){
+//             gt.push(rt.pop());
+//         }
+        
+//         //System.out.println(rt);
+//         System.out.println(gt);
+//     } 
+// }
+
+
+
+
+//copythe same elements (move satck same order)--->using 2stack
+// public class stack{
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         Stack<Integer> st=new Stack<>();
+//         Stack<Integer> rt=new Stack<>();
+//         st.push(12);
+//         st.push(34);
+//         st.push(1);
+//         st.push(54);
+//         System.out.println(st);
+//         while(st.size()>0){
+//             int x=st.peek();
+//             rt.push(x);
+//             st.pop();
+//         }
+//         // System.out.println(rt);
+        
+//         while(rt.size()>0){
+//             int x=rt.peek();
+//             System.out.print(x+" "); //print the value 
+//             st.push(x);
+//             rt.pop();
+//         }
+//         //System.out.println(st);
+        
+//     } 
+// }
+
+
+
+//copythe same elements (move satck same order)--->via array
+// public class stack{
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         Stack<Integer> st=new Stack<>();
+//         Stack<Integer> rt=new Stack<>();
+//         st.push(12);
+//         st.push(34);
+//         st.push(1);
+//         st.push(54);
+//         int n=st.size();
+//         int arr[]=new int[n];
+//         for(int i=n-1;i>=0;i--){
+//             int x=st.pop();
+//             arr[i]=x;
+//         }
+//         for(int i=0;i<n;i++){
+//             System.out.print(arr[i]+" ");
+//             st.push(arr[i]);
+//         }
+        
+//     } 
+// }
+
+
+
+//insert at bootom 
+// public class stack{
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         Stack<Integer> st=new Stack<>();
+//         Stack<Integer> rt=new Stack<>();
+//         st.push(12);
+//         st.push(34);
+//         st.push(1);
+//         st.push(54);
+//         System.out.println(st);
+//         while(st.size()>0){
+//             int x=st.peek();
+//             rt.push(x);
+//             st.pop();
+//         }
+//         st.push(45);
+//         // System.out.println(rt);
+        
+//         while(rt.size()>0){
+//             int x=rt.peek();
+//             st.push(x);
+//             rt.pop();
+//         }
+//         System.out.println(st);
+        
+//         //System.out.println(rt);
+        
+//     } 
+// }
+
+
+
+
+//insert at any index
+// public class stack{
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         Stack<Integer> st=new Stack<>();
+//         Stack<Integer> rt=new Stack<>();
+//         st.push(12);
+//         st.push(34);
+//         st.push(1);
+//         st.push(54);
+//         System.out.println(st);
+//         while(st.size()>2){ //insert at 2nd insert hats why loop upto 2
+//             int x=st.peek();
+//             rt.push(x);
+//             st.pop();
+//         }
+//         st.push(45);
+       
+        
+//         while(rt.size()>0){ 
+//             int x=rt.peek();
+//             st.push(x);
+//             rt.pop();
+//         }
+//         System.out.println(st);
+        
+//     } 
+// }
+
+
+
+
+
+//diplay the value in the stack by recusively
+// public class stack{
+//     public static void displayreverse(Stack<Integer> s){
+//         if(s.size()==0){
+//             return;
+//         }
+//         int temp=s.pop();
+//         System.out.print(temp+" ");
+//         displayreverse(s);
+//         s.push(temp);
+//     }
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         Stack<Integer> st=new Stack<>();
+//         Stack<Integer> rt=new Stack<>();
+//         st.push(12);
+//         st.push(34);
+//         st.push(1);
+//         st.push(54);
+//         displayreverse(st);
+        
+//     } 
+// }
+
+
+
+
+//stack underflow
+// public class stack{
+//     public static void popstak(Stack<Integer> st){
+//         if(st.isEmpty()){
+//         System.out.println("stack is empty(stack underflow)");
+//         }else{
+//             int po=st.pop();
+//             System.out.println("pop elemets is: "+po);
+//         }
+//     }
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         Stack<Integer> st=new Stack<>();
+//         Stack<Integer> rt=new Stack<>();
+//         st.push(12);
+//         st.push(34);
+//         st.push(1);
+//         st.push(54);
+//         popstak(st);
+//         popstak(st);
+//         popstak(st);
+//         popstak(st);
+//         popstak(st);
+//     }    
+// }
