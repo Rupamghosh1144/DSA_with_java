@@ -1,0 +1,74 @@
+public class STACKALL_LINKLIST {
+    public static class Node{
+        int data;
+        Node next;
+        Node(int x){
+            data=x;
+        }
+    }
+    public static class Stack{
+        Node head=null;
+        int size=0;
+        void push(int x){
+            Node temp=new Node(x);
+                temp.next=head;
+                head=temp;
+                size++;
+        }
+        void peek(){
+            System.out.println(head.data);
+        }
+        void pop(){
+            if(head==null){
+                System.out.println("stack is empty");
+            }else{
+                int x=head.data;
+                head=head.next;
+                System.out.println(x);
+            }
+        }
+        void displarecusrive(Node h){
+            if(h==null) return;
+            displarecusrive(h.next);
+            System.out.print(h.data+" ");
+        }
+        void display(){
+            displarecusrive(head);
+            System.out.println();
+        }
+        void displayreverse(){
+            Node temp=head;
+            if(head==null){
+                System.out.println("stack is empty");;
+            }
+            while(temp!=null){
+                System.out.print(temp.data+" ");
+                temp=temp.next;
+            }
+            System.out.println();
+        }
+
+    }
+    public static void main(String[] args) {
+        Stack st=new Stack();
+        st.display();
+        st.push(23);
+        st.push(67);
+        st.push(223);
+        st.push(65);
+        st.displayreverse();
+        st.peek();
+        st.pop(); //delete
+        System.out.println(st.size);
+        st.displayreverse();
+        st.push(7);
+        st.displayreverse();
+        System.out.println(st.size);
+        st.peek();
+        st.pop();
+        st.pop();
+        st.displayreverse(); //reverse priting
+        st.display();
+    }
+}
+
